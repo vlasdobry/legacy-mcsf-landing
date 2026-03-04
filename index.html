@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Your MCSF Scholarship at Legacy Online School | Accredited K-12</title>
+  <meta name="description" content="Apply your Maine Children's Scholarship Fund at Legacy Online School. Accredited K-12 online education from $149/month. Book a free consultation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1B2A4A;
+      --navy-light: #2A3D66;
+      --gold: #C4943D;
+      --gold-light: #D4A84F;
+      --cream: #FAF7F2;
+      --cream-dark: #F0EBE3;
+      --white: #FFFFFF;
+      --text: #2D3142;
+      --text-light: #5C6178;
+      --text-muted: #8E92A4;
+      --success: #3A7D5C;
+      --border: #E4E0D8;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.2; }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(27, 42, 74, 0.97);
+      backdrop-filter: blur(12px);
+      padding: 16px 0;
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      color: var(--white);
+      font-size: 1.25rem;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--navy);
+      padding: 140px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; right: -20%; width: 80%; height: 200%;
+      background: radial-gradient(ellipse, rgba(196, 148, 61, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,148,61,0.3), transparent);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(196, 148, 61, 0.15);
+      border: 1px solid rgba(196, 148, 61, 0.25);
+      color: var(--gold-light);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      max-width: 720px;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.125rem;
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.25s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,148,61,0.3); }
+    .btn-primary svg { width: 18px; height: 18px; }
+    .btn-secondary {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 16px 8px;
+      transition: color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--white); }
+    .hero-micro {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.8125rem;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .hero-micro svg { width: 14px; height: 14px; opacity: 0.6; }
+
+    /* ===== SOCIAL PROOF BAR ===== */
+    .proof-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .proof-bar .container {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .proof-item { text-align: center; }
+    .proof-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.75rem;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .proof-label { font-size: 0.8125rem; color: var(--text-muted); margin-top: 2px; font-weight: 500; }
+
+    /* ===== SECTIONS ===== */
+    .section { padding: 96px 0; }
+    .section-alt { background: var(--white); }
+    .section-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .section-header p { color: var(--text-light); font-size: 1.0625rem; }
+    .section-label {
+      display: inline-block;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* ===== PROBLEM/SOLUTION ===== */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+    .problem-card, .solution-card {
+      padding: 48px 40px;
+      border-radius: 16px;
+    }
+    .problem-card {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+    }
+    .solution-card {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .problem-card h3, .solution-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .solution-card h3 { color: var(--gold-light); }
+    .problem-card p, .solution-card p { line-height: 1.75; font-size: 1rem; }
+    .solution-card p { color: rgba(255,255,255,0.8); }
+    .card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.5rem;
+    }
+    .problem-card .card-icon { background: rgba(196,148,61,0.1); }
+    .solution-card .card-icon { background: rgba(196,148,61,0.2); }
+
+    /* ===== STEPS ===== */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .step-card {
+      text-align: center;
+      padding: 40px 32px;
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+    .step-num {
+      width: 48px; height: 48px;
+      background: var(--navy);
+      color: var(--gold-light);
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .step-card h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 12px; }
+    .step-card p { color: var(--text-light); font-size: 0.9375rem; }
+    .step-arrow {
+      display: none;
+      position: absolute; right: -22px; top: 50%;
+      color: var(--gold);
+      font-size: 1.25rem;
+      z-index: 2;
+    }
+    .step-card:not(:last-child) .step-arrow { display: block; }
+
+    /* ===== BENEFITS ===== */
+    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .benefit-item {
+      display: flex; gap: 20px;
+      padding: 32px;
+      background: var(--cream);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: border-color 0.3s;
+    }
+    .benefit-item:hover { border-color: var(--gold); }
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-light);
+      font-size: 1.25rem;
+    }
+    .benefit-item h4 { font-size: 1.0625rem; color: var(--navy); margin-bottom: 6px; }
+    .benefit-item p { color: var(--text-light); font-size: 0.875rem; line-height: 1.6; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+    }
+    .testimonial-stars { color: var(--gold); font-size: 0.875rem; letter-spacing: 2px; margin-bottom: 16px; }
+    .testimonial-text {
+      font-size: 0.9375rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonial-author { font-weight: 600; font-size: 0.875rem; color: var(--navy); }
+    .testimonial-role { font-size: 0.8125rem; color: var(--text-muted); }
+
+    /* ===== PRICING ===== */
+    .pricing-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 56px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .pricing-badge {
+      display: inline-block;
+      background: rgba(196,148,61,0.1);
+      color: var(--gold);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .pricing-amount {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3.5rem;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+    .pricing-amount span { font-size: 1.25rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; }
+    .pricing-note { color: var(--text-light); margin: 8px 0 32px; font-size: 0.9375rem; }
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+    .pricing-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.9375rem; color: var(--text);
+    }
+    .pricing-features li::before {
+      content: '';
+      width: 20px; height: 20px; flex-shrink: 0;
+      background: var(--success);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 14px; background-repeat: no-repeat; background-position: center;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      background: none; border: none;
+      text-align: left;
+      padding: 24px 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+    }
+    .faq-item.open .faq-icon { border-color: var(--gold); color: var(--gold); transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+      padding-bottom: 24px;
+      color: var(--text-light);
+      font-size: 0.9375rem;
+      line-height: 1.75;
+    }
+
+    /* ===== FORM SECTION ===== */
+    .form-section {
+      background: var(--navy);
+      padding: 96px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-section::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 120%; height: 100%;
+      background: radial-gradient(ellipse at center top, rgba(196,148,61,0.06) 0%, transparent 60%);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative; z-index: 1;
+    }
+    .form-content h2 {
+      color: var(--white);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      margin-bottom: 20px;
+    }
+    .form-content h2 em { color: var(--gold-light); font-style: italic; }
+    .form-content p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .form-trust {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .form-trust-item {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.875rem;
+    }
+    .form-trust-item svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+    .form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 44px 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .form-card h3 {
+      font-size: 1.375rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .form-card > p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 28px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(196,148,61,0.1);
+    }
+    .form-group input::placeholder { color: var(--text-muted); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
+    }
+    .form-submit .btn-primary { width: 100%; justify-content: center; font-size: 1.0625rem; padding: 16px; }
+    .form-disclaimer {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .form-success.show { display: block; }
+    .form-success h3 { color: var(--success); font-size: 1.5rem; margin-bottom: 12px; }
+    .form-success p { color: var(--text-light); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer p { color: rgba(255,255,255,0.35); font-size: 0.8125rem; }
+    .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer a:hover { color: var(--gold); }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .problem-grid,
+      .form-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .step-arrow { display: none !important; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .hero { padding: 120px 0 72px; }
+      .section { padding: 72px 0; }
+      .form-section { padding: 72px 0; }
+      .form-card { padding: 32px 24px; }
+      .pricing-card { padding: 40px 28px; }
+      .proof-bar .container { gap: 32px; }
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .nav-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="#" class="nav-logo">Legacy <span>Online School</span></a>
+      <a href="#apply" class="nav-cta cta-button">Book Free Consultation</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">MCSF Scholarship Accepted</div>
+      <h1>Your MCSF Scholarship Can Pay for a <em>Top-Rated Online Education</em></h1>
+      <p class="hero-sub">Legacy Online School is an accredited American K-12 school trusted by families worldwide. Tuition starts at just $149/month &mdash; and your Maine scholarship can cover a significant portion.</p>
+      <div class="hero-actions">
+        <a href="#apply" class="btn-primary cta-button">
+          Check Your Eligibility
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn-secondary">
+          See how it works
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+      <p class="hero-micro">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        Free 5-minute consultation. No commitment required.
+      </p>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <div class="proof-bar">
+    <div class="container">
+      <div class="proof-item">
+        <div class="proof-number">30+</div>
+        <div class="proof-label">Countries</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">WASC</div>
+        <div class="proof-label">Accredited</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">4.87</div>
+        <div class="proof-label">Parent Rating</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">K-12</div>
+        <div class="proof-label">All Grades</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">$149</div>
+        <div class="proof-label">From / month</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEM / SOLUTION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">The Opportunity</span>
+        <h2>Your Scholarship Shouldn't Go Unused</h2>
+        <p>Many Maine families qualify for the MCSF scholarship but don't know where to apply it. Legacy makes it simple.</p>
+      </div>
+      <div class="problem-grid fade-in">
+        <div class="problem-card">
+          <div class="card-icon">?</div>
+          <h3>The Challenge</h3>
+          <p>Your family has been awarded the Maine Children's Scholarship Fund, but finding an approved school that fits your child's needs &mdash; and your budget &mdash; feels overwhelming. Traditional private schools are expensive, and you're not sure if online options qualify.</p>
+        </div>
+        <div class="solution-card">
+          <div class="card-icon">&#10003;</div>
+          <h3>The Solution</h3>
+          <p>Legacy Online School accepts MCSF scholarships and provides accredited K-12 education from $149/month. Your scholarship can cover a significant portion of tuition, and we'll guide you through every step of the application process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">How It Works</span>
+        <h2>Three Simple Steps to Get Started</h2>
+        <p>From scholarship verification to your child's first class &mdash; we make the process effortless.</p>
+      </div>
+      <div class="steps-grid fade-in">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Check Your Eligibility</h3>
+          <p>Verify your family qualifies for the Maine Children's Scholarship Fund. We'll help you understand the requirements and timeline.</p>
+          <span class="step-arrow">&rarr;</span>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Apply to Legacy</h3>
+          <p>Complete a simple enrollment form. Our team will guide you through applying your MCSF scholarship to cover tuition.</p>
+          <span class="step-arrow">&rarr;</span>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Start Learning</h3>
+          <p>Your child begins their accredited online education with certified American teachers in small, personalized classes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Why Legacy</span>
+        <h2>An Education Worth Your Scholarship</h2>
+        <p>Quality, flexibility, and affordability &mdash; everything your family needs from a K-12 school.</p>
+      </div>
+      <div class="benefits-grid fade-in">
+        <div class="benefit-item">
+          <div class="benefit-icon">&#127891;</div>
+          <div>
+            <h4>US-Accredited Curriculum</h4>
+            <p>WASC & Cognia accredited. Recognized diploma accepted by colleges nationwide. AP courses available.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">&#128105;&#8205;&#127979;</div>
+          <div>
+            <h4>Certified American Teachers</h4>
+            <p>Small class sizes with an 8:1 student-teacher ratio. Every teacher is certified and dedicated to your child's success.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">&#128336;</div>
+          <div>
+            <h4>Flexible Schedule</h4>
+            <p>Live classes, self-paced learning, or a combination. Study from anywhere, at your child's pace, with rolling enrollment.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">&#128176;</div>
+          <div>
+            <h4>MCSF Scholarship Accepted</h4>
+            <p>Your Maine Children's Scholarship Fund covers a significant portion of tuition. We handle the paperwork for you.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">&#127758;</div>
+          <div>
+            <h4>Global Learning Community</h4>
+            <p>Students from 30+ countries. A safe, bully-free environment where every child is seen and supported.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">&#127942;</div>
+          <div>
+            <h4>College-Ready Graduates</h4>
+            <p>95% of graduates are accepted to their first or second choice university. SAT/ACT prep and college counseling included.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Parent Stories</span>
+        <h2>Trusted by Families Worldwide</h2>
+        <p>Rated 4.87 out of 5 by parents on Reviews.io</p>
+      </div>
+      <div class="testimonials-grid fade-in">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The teachers genuinely care about each student. My daughter went from struggling in public school to thriving at Legacy. The scholarship made it affordable for our family."</p>
+          <div class="testimonial-author">Sarah M.</div>
+          <div class="testimonial-role">Parent of a 7th grader, Maine</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"We were worried about online school quality, but Legacy exceeded our expectations. Small classes, real teachers, and a diploma that colleges respect. Worth every penny."</p>
+          <div class="testimonial-author">James & Linda K.</div>
+          <div class="testimonial-role">Parents of two students, K-12</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The flexibility is incredible. My son can learn at his own pace, and the support team is always there when we need help. The MCSF scholarship process was seamless."</p>
+          <div class="testimonial-author">Michelle R.</div>
+          <div class="testimonial-role">Parent of a 4th grader, Maine</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Tuition</span>
+        <h2>Affordable with Your Scholarship</h2>
+        <p>Your MCSF scholarship can cover a significant portion of Legacy's tuition.</p>
+      </div>
+      <div class="pricing-card fade-in">
+        <div class="pricing-badge">MCSF Scholarship Eligible</div>
+        <div class="pricing-amount">$149 <span>/month</span></div>
+        <p class="pricing-note">Starting tuition. MCSF Hybrid Scholarship covers up to $900/year.</p>
+        <ul class="pricing-features">
+          <li>WASC & Cognia accredited K-12 education</li>
+          <li>Live classes with certified American teachers</li>
+          <li>8:1 student-teacher ratio</li>
+          <li>Personal Learning Support Specialist</li>
+          <li>AP courses and college prep included</li>
+          <li>Flexible scheduling &mdash; learn from anywhere</li>
+          <li>MCSF scholarship application guidance</li>
+          <li>Rolling enrollment &mdash; start any time</li>
+        </ul>
+        <a href="#apply" class="btn-primary cta-button" style="width: 100%; justify-content: center;">
+          Book Your Free Consultation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">FAQ</span>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-list fade-in">
+        <div class="faq-item">
+          <button class="faq-question">What is the Maine Children's Scholarship Fund (MCSF)?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">MCSF (also known as MECSF) provides scholarships to Maine families with qualifying income levels to help cover tuition at approved private schools, including online schools like Legacy. The Hybrid Scholarship covers 65% of tuition costs, up to $900 per child per year.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How much does Legacy Online School cost?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Tuition starts at $149/month ($1,788/year). Your MCSF scholarship can cover up to $900/year, reducing your out-of-pocket cost to as low as $74/month. Additional discounts are available for annual and semester payments.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is Legacy Online School accredited?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. Legacy is accredited by both WASC (Western Association of Schools and Colleges) and Cognia &mdash; recognized by the U.S. Department of Education. Our diplomas and transcripts are accepted by colleges and universities nationwide.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can my child start mid-year?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We offer rolling enrollment with multiple start dates throughout the year. Your child can begin their education at Legacy at any time &mdash; no need to wait for a new semester.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What grades do you offer?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">We offer complete K-12 education &mdash; from kindergarten through 12th grade. This includes elementary (K-5), middle school (6-8), and high school (9-12) programs, along with AP courses and college preparation.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do I apply my MCSF scholarship to Legacy?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Book a free consultation with our team, and we'll walk you through the entire process step by step. We'll help you verify your eligibility, complete the necessary forms, and ensure your scholarship is properly applied to your tuition.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="apply">
+    <div class="container">
+      <div class="form-grid">
+        <div class="form-content fade-in">
+          <span class="section-label" style="color: var(--gold);">Get Started</span>
+          <h2>Book Your <em>Free Consultation</em></h2>
+          <p>Schedule a quick 5-minute call with our enrollment team. We'll answer your questions about Legacy, walk you through the MCSF scholarship process, and help you get started.</p>
+          <div class="form-trust">
+            <div class="form-trust-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              No commitment required
+            </div>
+            <div class="form-trust-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              Takes only 5 minutes
+            </div>
+            <div class="form-trust-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              We guide you through MCSF application
+            </div>
+          </div>
+        </div>
+        <div class="form-card fade-in">
+          <form id="applicationForm">
+            <h3>Request a Free Consultation</h3>
+            <p>Fill out the form and we'll contact you within 24 hours.</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(207) 555-0123" required>
+            </div>
+            <div class="form-group">
+              <label for="grade">Child's Current Grade</label>
+              <select id="grade" name="grade" required>
+                <option value="" disabled selected>Select grade level</option>
+                <option value="K">Kindergarten</option>
+                <option value="1">1st Grade</option>
+                <option value="2">2nd Grade</option>
+                <option value="3">3rd Grade</option>
+                <option value="4">4th Grade</option>
+                <option value="5">5th Grade</option>
+                <option value="6">6th Grade</option>
+                <option value="7">7th Grade</option>
+                <option value="8">8th Grade</option>
+                <option value="9">9th Grade</option>
+                <option value="10">10th Grade</option>
+                <option value="11">11th Grade</option>
+                <option value="12">12th Grade</option>
+              </select>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn-primary cta-button">
+                Book My Free Consultation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            <p class="form-disclaimer">Your information is secure. We'll never share your data with third parties.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <h3>Thank You!</h3>
+            <p>We've received your request. Our enrollment team will contact you within 24 hours to schedule your free consultation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Legacy Online School. WASC & Cognia Accredited. <a href="https://legacyonlineschool.com">legacyonlineschool.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Form submission with Data Layer push (for GTM)
+    document.getElementById('applicationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const grade = document.getElementById('grade').value;
+
+      // Data Layer push for GTM
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'form_success',
+        form_name: 'scholarship_application',
+        enhanced_conversions: {
+          email: email,
+          phone_number: phone,
+          first_name: firstName,
+          last_name: lastName
+        }
+      });
+
+      // Show success message
+      this.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    });
+  </script>
+
+</body>
+</html>
