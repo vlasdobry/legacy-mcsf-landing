@@ -73,7 +73,7 @@
     /* ===== HERO ===== */
     .hero {
       background: var(--navy);
-      padding: 140px 0 100px;
+      padding: 140px 0 0;
       position: relative;
       overflow: hidden;
     }
@@ -89,6 +89,12 @@
       background: linear-gradient(90deg, transparent, rgba(196,148,61,0.3), transparent);
     }
     .hero .container { position: relative; z-index: 1; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(196, 148, 61, 0.15);
@@ -136,6 +142,20 @@
     }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,148,61,0.3); }
     .btn-primary svg { width: 18px; height: 18px; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--white);
+      padding: 15px 28px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,0.3);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
     .btn-secondary {
       color: rgba(255,255,255,0.8);
       text-decoration: none;
@@ -153,6 +173,138 @@
       display: flex; align-items: center; gap: 6px;
     }
     .hero-micro svg { width: 14px; height: 14px; opacity: 0.6; }
+    /* Hero photo placeholder — replace with real student photo in production */
+    .hero-photo {
+      position: relative;
+      align-self: end;
+    }
+    .hero-photo-inner {
+      width: 100%;
+      aspect-ratio: 4/5;
+      max-height: 520px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(135deg, #2A3D66 0%, #3A5080 40%, #4A6090 70%, #2A3D66 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo-inner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(196,148,61,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    }
+    .hero-photo-inner::after {
+      content: '📚 Student Photo';
+      position: absolute; bottom: 40%; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.25);
+      font-size: 1rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .hero-photo-badge {
+      position: absolute; bottom: 24px; left: -16px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 14px 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      display: flex; align-items: center; gap: 12px;
+      z-index: 2;
+    }
+    .hero-photo-badge-icon {
+      width: 40px; height: 40px;
+      background: var(--success);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.25rem;
+    }
+    .hero-photo-badge strong { display: block; font-size: 0.9375rem; color: var(--navy); }
+    .hero-photo-badge span { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* ===== TEACHERS ===== */
+    .teachers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .teacher-card {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--cream);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .teacher-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+    .teacher-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      color: white;
+      font-weight: 600;
+    }
+    .teacher-card h4 { font-size: 1.0625rem; color: var(--navy); margin-bottom: 4px; }
+    .teacher-card .teacher-subj { font-size: 0.8125rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .teacher-card p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* ===== CLASSROOM MOCKUP ===== */
+    .classroom-window {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border: 1px solid var(--border);
+    }
+    .classroom-titlebar {
+      background: #E8E4DE;
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .classroom-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .classroom-dot:nth-child(1) { background: #FF5F57; }
+    .classroom-dot:nth-child(2) { background: #FFBD2E; }
+    .classroom-dot:nth-child(3) { background: #28CA41; }
+    .classroom-titlebar span { margin-left: 8px; font-size: 0.8125rem; color: var(--text-muted); }
+    .classroom-body {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      min-height: 340px;
+    }
+    .classroom-main {
+      padding: 32px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      background: var(--navy);
+      color: var(--white);
+    }
+    .classroom-main-icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.6; }
+    .classroom-main h4 { font-size: 1.125rem; margin-bottom: 6px; }
+    .classroom-main p { font-size: 0.8125rem; color: rgba(255,255,255,0.5); }
+    .classroom-sidebar { padding: 20px; border-left: 1px solid var(--border); }
+    .classroom-sidebar h5 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .classroom-student {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0;
+    }
+    .classroom-student-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; color: white; font-weight: 600;
+    }
+    .classroom-student-name { font-size: 0.8125rem; font-weight: 500; color: var(--text); }
+    .classroom-student-flag { font-size: 0.75rem; }
 
     /* ===== SOCIAL PROOF BAR ===== */
     .proof-bar {
@@ -539,13 +691,20 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-photo { max-width: 360px; margin: 0 auto; }
+      .hero-photo-inner { max-height: 380px; border-radius: 16px; }
+      .hero-photo-badge { left: 0; }
       .problem-grid,
       .form-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
       .step-arrow { display: none !important; }
       .benefits-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
-      .hero { padding: 120px 0 72px; }
+      .teachers-grid { grid-template-columns: repeat(2, 1fr); }
+      .classroom-body { grid-template-columns: 1fr; }
+      .classroom-sidebar { border-left: none; border-top: 1px solid var(--border); }
+      .hero { padding: 120px 0 0; }
       .section { padding: 72px 0; }
       .form-section { padding: 72px 0; }
       .form-card { padding: 32px 24px; }
@@ -557,6 +716,7 @@
       .form-row { grid-template-columns: 1fr; }
       .hero-actions { flex-direction: column; align-items: flex-start; }
       .nav-cta { display: none; }
+      .teachers-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
     }
   </style>
 </head>
@@ -573,23 +733,37 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">MCSF Scholarship Accepted</div>
-      <h1>Your MCSF Scholarship Can Pay for a <em>Top-Rated Online Education</em></h1>
-      <p class="hero-sub">Legacy Online School is an accredited American K-12 school trusted by families worldwide. Tuition starts at just $149/month &mdash; and your Maine scholarship can cover a significant portion.</p>
-      <div class="hero-actions">
-        <a href="#apply" class="btn-primary cta-button">
-          Check Your Eligibility
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#how-it-works" class="btn-secondary">
-          See how it works
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        </a>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">MCSF Scholarship Accepted</div>
+          <h1>Your MCSF Scholarship Can Pay for a <em>Top-Rated Online Education</em></h1>
+          <p class="hero-sub">Legacy Online School is an accredited American K-12 school trusted by families worldwide. Tuition starts at just $149/month &mdash; and your Maine scholarship can cover a significant portion.</p>
+          <div class="hero-actions">
+            <a href="#classroom" class="btn-primary cta-button">
+              Watch a Sample Class
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#apply" class="btn-outline cta-button">
+              Check Your Eligibility
+            </a>
+          </div>
+          <p class="hero-micro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Free 5-minute consultation. No commitment required.
+          </p>
+        </div>
+        <!-- Replace with real student photo in production -->
+        <div class="hero-photo" aria-label="Student studying online with Legacy Online School">
+          <div class="hero-photo-inner"></div>
+          <div class="hero-photo-badge">
+            <div class="hero-photo-badge-icon">&#10003;</div>
+            <div>
+              <strong>WASC Accredited</strong>
+              <span>Recognized nationwide</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="hero-micro">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-        Free 5-minute consultation. No commitment required.
-      </p>
     </div>
   </section>
 
@@ -727,6 +901,102 @@
     </div>
   </section>
 
+  <!-- INSIDE THE CLASSROOM -->
+  <section class="section section-alt" id="classroom">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Inside the Classroom</span>
+        <h2>See How Your Child Will Learn</h2>
+        <p>Small live classes with certified teachers, interactive tools, and students from around the world.</p>
+      </div>
+      <div class="classroom-window fade-in">
+        <div class="classroom-titlebar">
+          <div class="classroom-dot"></div>
+          <div class="classroom-dot"></div>
+          <div class="classroom-dot"></div>
+          <span>Legacy Online School &mdash; Live Class</span>
+        </div>
+        <div class="classroom-body">
+          <div class="classroom-main">
+            <div class="classroom-main-icon">&#9655;</div>
+            <h4>Live Mathematics Class</h4>
+            <p>Grade 6 &bull; Mrs. Anderson &bull; 10 students online</p>
+          </div>
+          <div class="classroom-sidebar">
+            <h5>Students Online (10)</h5>
+            <div class="classroom-student">
+              <div class="classroom-student-avatar" style="background:#3A7D5C;">EA</div>
+              <span class="classroom-student-name">Emma A.</span>
+              <span class="classroom-student-flag">&#127482;&#127480;</span>
+            </div>
+            <div class="classroom-student">
+              <div class="classroom-student-avatar" style="background:#C4943D;">LT</div>
+              <span class="classroom-student-name">Lucas T.</span>
+              <span class="classroom-student-flag">&#127463;&#127479;</span>
+            </div>
+            <div class="classroom-student">
+              <div class="classroom-student-avatar" style="background:#6B4C9A;">SK</div>
+              <span class="classroom-student-name">Sofia K.</span>
+              <span class="classroom-student-flag">&#127466;&#127480;</span>
+            </div>
+            <div class="classroom-student">
+              <div class="classroom-student-avatar" style="background:#2A3D66;">AM</div>
+              <span class="classroom-student-name">Aiden M.</span>
+              <span class="classroom-student-flag">&#127468;&#127463;</span>
+            </div>
+            <div class="classroom-student">
+              <div class="classroom-student-avatar" style="background:#C4573D;">YN</div>
+              <span class="classroom-student-name">Yuki N.</span>
+              <span class="classroom-student-flag">&#127471;&#127477;</span>
+            </div>
+            <div class="classroom-student">
+              <div class="classroom-student-avatar" style="background:#3A5080;">MR</div>
+              <span class="classroom-student-name">Maya R.</span>
+              <span class="classroom-student-flag">&#127482;&#127480;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET OUR TEACHERS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Our Team</span>
+        <h2>Meet the Teachers Behind Legacy</h2>
+        <p>Certified American educators with a passion for personalized online learning.</p>
+      </div>
+      <div class="teachers-grid fade-in">
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #3A7D5C, #2D6148);">SA</div>
+          <h4>Sarah Anderson</h4>
+          <div class="teacher-subj">Mathematics</div>
+          <p>M.Ed., 12 years teaching. Specializes in making math approachable for every learner.</p>
+        </div>
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #2A3D66, #1B2A4A);">JC</div>
+          <h4>James Carter</h4>
+          <div class="teacher-subj">Science</div>
+          <p>Ph.D. in Biology. Brings real-world research into engaging virtual labs and lessons.</p>
+        </div>
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #C4943D, #A87D2F);">MR</div>
+          <h4>Maria Rodriguez</h4>
+          <div class="teacher-subj">English &amp; Literature</div>
+          <p>Published author. Helps students find their voice through creative writing and analysis.</p>
+        </div>
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #6B4C9A, #553C7A);">DK</div>
+          <h4>David Kim</h4>
+          <div class="teacher-subj">History &amp; Social Studies</div>
+          <p>Former diplomat. Connects history to current events with a global perspective.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section class="section section-alt">
     <div class="container">
@@ -739,20 +1009,35 @@
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="testimonial-text">"The teachers genuinely care about each student. My daughter went from struggling in public school to thriving at Legacy. The scholarship made it affordable for our family."</p>
-          <div class="testimonial-author">Sarah M.</div>
-          <div class="testimonial-role">Parent of a 7th grader, Maine</div>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3A7D5C,#2D6148);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:0.8125rem;flex-shrink:0;">SM</div>
+            <div>
+              <div class="testimonial-author">Sarah M.</div>
+              <div class="testimonial-role">Parent of a 7th grader, Maine</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="testimonial-text">"We were worried about online school quality, but Legacy exceeded our expectations. Small classes, real teachers, and a diploma that colleges respect. Worth every penny."</p>
-          <div class="testimonial-author">James & Linda K.</div>
-          <div class="testimonial-role">Parents of two students, K-12</div>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#2A3D66,#1B2A4A);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:0.8125rem;flex-shrink:0;">JL</div>
+            <div>
+              <div class="testimonial-author">James &amp; Linda K.</div>
+              <div class="testimonial-role">Parents of two students, K-12</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"The flexibility is incredible. My son can learn at his own pace, and the support team is always there when we need help. The MCSF scholarship process was seamless."</p>
-          <div class="testimonial-author">Michelle R.</div>
-          <div class="testimonial-role">Parent of a 4th grader, Maine</div>
+          <p class="testimonial-text">"The flexibility is incredible. My son can learn at his own pace, and the support team is always there when we need help. The MCSF scholarship process was straightforward."</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#C4943D,#A87D2F);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:0.8125rem;flex-shrink:0;">MR</div>
+            <div>
+              <div class="testimonial-author">Michelle R.</div>
+              <div class="testimonial-role">Parent of a 4th grader, Maine</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
