@@ -4,212 +4,568 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Use Your MCSF Scholarship at Legacy Online School | Accredited K-12</title>
-  <meta name="description" content="Apply your Maine Children's Scholarship Fund at Legacy Online School. Accredited K-12 online education from $149/month. Book a free consultation.">
+  <meta name="description" content="Apply your Maine Children's Scholarship Fund at Legacy Online School. WASC-accredited K-12 online education from $149/month. Try 3 free classes today.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy: #1B2A4A;
-      --navy-light: #2A3D66;
-      --gold: #C4943D;
-      --gold-light: #D4A84F;
-      --cream: #FAF7F2;
-      --cream-dark: #F0EBE3;
+      --forest: #1A3C34;
+      --forest-light: #245248;
+      --sage: #4A7C6F;
+      --sage-light: #6B9E8F;
+      --amber: #D4913D;
+      --amber-light: #E2A554;
+      --amber-pale: rgba(212, 145, 61, 0.1);
+      --cream: #FBF7F0;
+      --stone: #F0EBE2;
       --white: #FFFFFF;
-      --text: #2D3142;
-      --text-light: #5C6178;
-      --text-muted: #8E92A4;
-      --success: #3A7D5C;
-      --border: #E4E0D8;
+      --text: #2C3E36;
+      --text-light: #5A6D63;
+      --text-muted: #8A9B91;
+      --border: #DDD6CA;
+      --success: #2D7A4F;
     }
 
     html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Libre Franklin', sans-serif;
       color: var(--text);
       background: var(--cream);
-      line-height: 1.65;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      position: relative;
     }
 
-    h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.2; }
+    /* Grain texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
 
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      line-height: 1.2;
+      font-optical-sizing: auto;
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
 
     /* ===== NAV ===== */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(27, 42, 74, 0.97);
-      backdrop-filter: blur(12px);
-      padding: 16px 0;
-      transition: box-shadow 0.3s;
+      background: rgba(26, 60, 52, 0.97);
+      backdrop-filter: blur(16px);
+      padding: 14px 0;
+      transition: box-shadow 0.4s ease;
     }
-    .nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+    .nav.scrolled { box-shadow: 0 4px 40px rgba(26, 60, 52, 0.25); }
     .nav .container { display: flex; align-items: center; justify-content: space-between; }
     .nav-logo {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Fraunces', serif;
       color: var(--white);
-      font-size: 1.25rem;
+      font-size: 1.2rem;
+      font-weight: 600;
       text-decoration: none;
       letter-spacing: -0.02em;
     }
-    .nav-logo span { color: var(--gold); }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-link {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--white); }
     .nav-cta {
-      background: var(--gold);
+      background: var(--amber);
       color: var(--white);
       padding: 10px 24px;
-      border-radius: 6px;
+      border-radius: 100px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.875rem;
-      transition: background 0.2s, transform 0.2s;
+      font-size: 0.8125rem;
+      letter-spacing: 0.02em;
+      transition: all 0.25s;
     }
-    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--amber-light); transform: translateY(-1px); }
 
     /* ===== HERO ===== */
     .hero {
-      background: var(--navy);
-      padding: 140px 0 0;
+      background: var(--forest);
+      padding: 130px 0 0;
       position: relative;
       overflow: hidden;
     }
+    /* Organic blob shape */
     .hero::before {
       content: '';
-      position: absolute; top: -50%; right: -20%; width: 80%; height: 200%;
-      background: radial-gradient(ellipse, rgba(196, 148, 61, 0.08) 0%, transparent 70%);
-      pointer-events: none;
+      position: absolute;
+      top: -30%; right: -15%;
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse, rgba(74, 124, 111, 0.2) 0%, transparent 70%);
+      border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+      animation: morph 20s ease-in-out infinite;
     }
     .hero::after {
       content: '';
-      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(196,148,61,0.3), transparent);
+      position: absolute;
+      bottom: -20%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(212, 145, 61, 0.08) 0%, transparent 70%);
+      border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
+      animation: morph 25s ease-in-out infinite reverse;
+    }
+    @keyframes morph {
+      0%, 100% { border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%; }
+      25% { border-radius: 55% 45% 40% 60% / 40% 55% 50% 50%; }
+      50% { border-radius: 45% 55% 60% 40% / 60% 45% 40% 60%; }
+      75% { border-radius: 60% 40% 45% 55% / 50% 60% 55% 40%; }
     }
     .hero .container { position: relative; z-index: 1; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
       align-items: end;
     }
+    .hero-content { padding-bottom: 64px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(196, 148, 61, 0.15);
-      border: 1px solid rgba(196, 148, 61, 0.25);
-      color: var(--gold-light);
-      padding: 8px 18px;
+      background: rgba(212, 145, 61, 0.12);
+      border: 1px solid rgba(212, 145, 61, 0.25);
+      color: var(--amber-light);
+      padding: 8px 20px;
       border-radius: 100px;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
     }
-    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
     .hero h1 {
       color: var(--white);
-      font-size: clamp(2.25rem, 5vw, 3.5rem);
-      max-width: 720px;
+      font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+      font-weight: 700;
+      max-width: 600px;
       margin-bottom: 24px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
+      animation: fadeUp 0.8s 0.1s ease both;
     }
     .hero h1 em {
       font-style: italic;
-      color: var(--gold-light);
+      color: var(--amber-light);
+      font-weight: 600;
     }
     .hero-sub {
-      color: rgba(255,255,255,0.7);
-      font-size: 1.125rem;
-      max-width: 560px;
-      margin-bottom: 40px;
-      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      font-size: 1.0625rem;
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+      animation: fadeUp 0.8s 0.2s ease both;
     }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold);
+      background: var(--amber);
       color: var(--white);
       padding: 16px 32px;
-      border-radius: 8px;
+      border-radius: 100px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.25s;
+      font-size: 0.9375rem;
+      transition: all 0.3s;
       border: none; cursor: pointer;
+      letter-spacing: 0.01em;
     }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,148,61,0.3); }
+    .btn-primary:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(212, 145, 61, 0.3);
+    }
     .btn-primary svg { width: 18px; height: 18px; }
-    .btn-outline {
+    .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       background: transparent;
-      color: var(--white);
+      color: rgba(255,255,255,0.8);
       padding: 15px 28px;
-      border-radius: 8px;
-      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      border: 1.5px solid rgba(255,255,255,0.2);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9375rem;
-      transition: all 0.25s;
+      transition: all 0.3s;
       cursor: pointer;
     }
-    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
-    .btn-secondary {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9375rem;
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 16px 8px;
-      transition: color 0.2s;
-    }
-    .btn-secondary:hover { color: var(--white); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); background: rgba(255,255,255,0.05); }
     .hero-micro {
-      margin-top: 20px;
-      color: rgba(255,255,255,0.45);
+      margin-top: 24px;
+      color: rgba(255,255,255,0.4);
       font-size: 0.8125rem;
       display: flex; align-items: center; gap: 6px;
+      animation: fadeUp 0.8s 0.4s ease both;
     }
     .hero-micro svg { width: 14px; height: 14px; opacity: 0.6; }
-    /* Hero photo placeholder — replace with real student photo in production */
+
+    /* Hero photo */
     .hero-photo {
       position: relative;
-      align-self: end;
+      animation: fadeUp 1s 0.3s ease both;
     }
     .hero-photo-inner {
       width: 100%;
-      max-height: 520px;
-      border-radius: 20px 20px 0 0;
+      border-radius: 24px 24px 0 0;
       overflow: hidden;
+      box-shadow: 0 -20px 60px rgba(0,0,0,0.2);
     }
     .hero-photo-inner img {
       width: 100%;
-      height: 100%;
-      max-height: 520px;
+      height: 480px;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
-    .hero-photo-badge {
-      position: absolute; bottom: 24px; left: -16px;
+    .hero-float-card {
+      position: absolute;
       background: var(--white);
-      border-radius: 12px;
-      padding: 14px 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-      display: flex; align-items: center; gap: 12px;
+      border-radius: 16px;
+      padding: 16px 22px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      display: flex; align-items: center; gap: 14px;
       z-index: 2;
+      animation: float-card 6s ease-in-out infinite;
     }
-    .hero-photo-badge-icon {
-      width: 40px; height: 40px;
-      background: var(--success);
-      border-radius: 10px;
+    .hero-float-card.left {
+      bottom: 80px; left: -24px;
+    }
+    .hero-float-card.right {
+      top: 40px; right: -20px;
+      animation-delay: -3s;
+    }
+    @keyframes float-card {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .float-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      color: white; font-size: 1.25rem;
+      font-size: 1.25rem;
+      flex-shrink: 0;
     }
-    .hero-photo-badge strong { display: block; font-size: 0.9375rem; color: var(--navy); }
-    .hero-photo-badge span { font-size: 0.75rem; color: var(--text-muted); }
+    .float-icon.green { background: rgba(45, 122, 79, 0.1); color: var(--success); }
+    .float-icon.amber { background: var(--amber-pale); color: var(--amber); }
+    .float-label { font-size: 0.75rem; color: var(--text-muted); }
+    .float-value { font-weight: 700; font-size: 0.9375rem; color: var(--forest); }
+
+    /* ===== PROOF BAR ===== */
+    .proof-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+    }
+    .proof-bar .container {
+      display: flex;
+      justify-content: center;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+    .proof-item { text-align: center; }
+    .proof-number {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--forest);
+      letter-spacing: -0.02em;
+    }
+    .proof-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ===== SECTIONS ===== */
+    .section { padding: 100px 0; }
+    .section-alt { background: var(--white); }
+    .section-header { text-align: center; max-width: 620px; margin: 0 auto 64px; }
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.375rem);
+      color: var(--forest);
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+    .section-header p { color: var(--text-light); font-size: 1.0625rem; }
+    .section-tag {
+      display: inline-block;
+      color: var(--amber);
+      font-weight: 700;
+      font-size: 0.6875rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      position: relative;
+      padding-left: 24px;
+    }
+    .section-tag::before {
+      content: '';
+      position: absolute; left: 0; top: 50%;
+      width: 16px; height: 2px;
+      background: var(--amber);
+      transform: translateY(-50%);
+    }
+
+    /* ===== PROBLEM / SOLUTION ===== */
+    .ps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .ps-card {
+      padding: 48px 44px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ps-card.problem {
+      background: var(--stone);
+      border: 1px solid var(--border);
+    }
+    .ps-card.solution {
+      background: var(--forest);
+      color: var(--white);
+    }
+    .ps-card.solution::before {
+      content: '';
+      position: absolute; top: -50%; right: -30%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(212, 145, 61, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .ps-card .card-emoji {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.5rem;
+    }
+    .ps-card.problem .card-emoji { background: var(--amber-pale); }
+    .ps-card.solution .card-emoji { background: rgba(212, 145, 61, 0.15); }
+    .ps-card h3 { font-size: 1.375rem; margin-bottom: 16px; }
+    .ps-card.solution h3 { color: var(--amber-light); }
+    .ps-card p { line-height: 1.8; font-size: 0.9375rem; }
+    .ps-card.solution p { color: rgba(255,255,255,0.75); }
+    .ps-list { list-style: none; margin-top: 20px; }
+    .ps-list li {
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      font-size: 0.9375rem;
+    }
+    .ps-list li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: var(--amber-light);
+      font-weight: 700;
+    }
+    .ps-card.problem .ps-list li::before {
+      content: '×';
+      color: #C0614D;
+    }
+
+    /* ===== STEPS ===== */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 48px; left: 15%; right: 15%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--border), var(--sage-light), var(--border));
+      z-index: 0;
+    }
+    .step-card {
+      text-align: center;
+      padding: 44px 32px;
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+      transition: all 0.4s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(26, 60, 52, 0.08);
+      border-color: var(--sage-light);
+    }
+    .step-num {
+      width: 52px; height: 52px;
+      background: var(--forest);
+      color: var(--amber-light);
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+    .step-num::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 2px solid rgba(26, 60, 52, 0.15);
+      border-radius: 50%;
+    }
+    .step-card h3 { font-size: 1.1875rem; color: var(--forest); margin-bottom: 12px; }
+    .step-card p { color: var(--text-light); font-size: 0.875rem; line-height: 1.7; }
+
+    /* ===== BENEFITS ===== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .benefit-card {
+      padding: 36px 32px;
+      background: var(--cream);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--sage);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26, 60, 52, 0.06);
+    }
+    .benefit-card:hover::after { transform: scaleX(1); }
+    .benefit-emoji {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      background: var(--amber-pale);
+    }
+    .benefit-card h4 {
+      font-size: 1.0625rem;
+      color: var(--forest);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .benefit-card p {
+      color: var(--text-light);
+      font-size: 0.8125rem;
+      line-height: 1.7;
+    }
+
+    /* ===== CLASSROOM ===== */
+    .classroom-window {
+      max-width: 880px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(26, 60, 52, 0.12);
+      border: 1px solid var(--border);
+    }
+    .classroom-bar {
+      background: var(--stone);
+      padding: 14px 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .classroom-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .classroom-dot:nth-child(1) { background: #FF6159; }
+    .classroom-dot:nth-child(2) { background: #FFC130; }
+    .classroom-dot:nth-child(3) { background: #2ACB42; }
+    .classroom-bar-title {
+      margin-left: 12px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .classroom-body {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      min-height: 320px;
+    }
+    .classroom-main {
+      padding: 40px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      background: var(--forest);
+      color: var(--white);
+      position: relative;
+    }
+    .classroom-main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(74, 124, 111, 0.3) 0%, transparent 60%);
+    }
+    .classroom-main-icon { font-size: 3rem; margin-bottom: 16px; position: relative; z-index: 1; }
+    .classroom-main h4 { font-size: 1.125rem; margin-bottom: 6px; position: relative; z-index: 1; }
+    .classroom-main p { font-size: 0.8125rem; color: rgba(255,255,255,0.5); position: relative; z-index: 1; }
+    .classroom-sidebar { padding: 24px 20px; border-left: 1px solid var(--border); }
+    .classroom-sidebar h5 {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .classroom-student {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 0;
+    }
+    .cls-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: white; font-weight: 700;
+    }
+    .cls-name { font-size: 0.8125rem; font-weight: 500; color: var(--text); flex: 1; }
+    .cls-flag { font-size: 0.8rem; }
 
     /* ===== TEACHERS ===== */
     .teachers-grid {
@@ -219,350 +575,236 @@
     }
     .teacher-card {
       text-align: center;
-      padding: 32px 20px;
-      background: var(--cream);
-      border-radius: 16px;
+      padding: 36px 24px;
+      background: var(--white);
+      border-radius: 20px;
       border: 1px solid var(--border);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.4s ease;
     }
-    .teacher-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+    .teacher-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(26, 60, 52, 0.08);
+    }
     .teacher-avatar {
-      width: 80px; height: 80px;
+      width: 76px; height: 76px;
       border-radius: 50%;
-      margin: 0 auto 16px;
+      margin: 0 auto 18px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-      color: white;
-      font-weight: 600;
-    }
-    .teacher-card h4 { font-size: 1.0625rem; color: var(--navy); margin-bottom: 4px; }
-    .teacher-card .teacher-subj { font-size: 0.8125rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-    .teacher-card p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; }
-
-    /* ===== CLASSROOM MOCKUP ===== */
-    .classroom-window {
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-      border: 1px solid var(--border);
-    }
-    .classroom-titlebar {
-      background: #E8E4DE;
-      padding: 12px 16px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .classroom-dot { width: 12px; height: 12px; border-radius: 50%; }
-    .classroom-dot:nth-child(1) { background: #FF5F57; }
-    .classroom-dot:nth-child(2) { background: #FFBD2E; }
-    .classroom-dot:nth-child(3) { background: #28CA41; }
-    .classroom-titlebar span { margin-left: 8px; font-size: 0.8125rem; color: var(--text-muted); }
-    .classroom-body {
-      background: var(--white);
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      min-height: 340px;
-    }
-    .classroom-main {
-      padding: 32px;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      background: var(--navy);
-      color: var(--white);
-    }
-    .classroom-main-icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.6; }
-    .classroom-main h4 { font-size: 1.125rem; margin-bottom: 6px; }
-    .classroom-main p { font-size: 0.8125rem; color: rgba(255,255,255,0.5); }
-    .classroom-sidebar { padding: 20px; border-left: 1px solid var(--border); }
-    .classroom-sidebar h5 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.6875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-    .classroom-student {
-      display: flex; align-items: center; gap: 10px;
-      padding: 8px 0;
-    }
-    .classroom-student-avatar {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.75rem; color: white; font-weight: 600;
-    }
-    .classroom-student-name { font-size: 0.8125rem; font-weight: 500; color: var(--text); }
-    .classroom-student-flag { font-size: 0.75rem; }
-
-    /* ===== SOCIAL PROOF BAR ===== */
-    .proof-bar {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 32px 0;
-    }
-    .proof-bar .container {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .proof-item { text-align: center; }
-    .proof-number {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.75rem;
-      color: var(--navy);
-      letter-spacing: -0.02em;
-    }
-    .proof-label { font-size: 0.8125rem; color: var(--text-muted); margin-top: 2px; font-weight: 500; }
-
-    /* ===== SECTIONS ===== */
-    .section { padding: 96px 0; }
-    .section-alt { background: var(--white); }
-    .section-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
-    .section-header h2 {
-      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      color: var(--navy);
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-    .section-header p { color: var(--text-light); font-size: 1.0625rem; }
-    .section-label {
-      display: inline-block;
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    /* ===== PROBLEM/SOLUTION ===== */
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: stretch;
-    }
-    .problem-card, .solution-card {
-      padding: 48px 40px;
-      border-radius: 16px;
-    }
-    .problem-card {
-      background: var(--cream-dark);
-      border: 1px solid var(--border);
-    }
-    .solution-card {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .problem-card h3, .solution-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-    .solution-card h3 { color: var(--gold-light); }
-    .problem-card p, .solution-card p { line-height: 1.75; font-size: 1rem; }
-    .solution-card p { color: rgba(255,255,255,0.8); }
-    .card-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 24px;
-      font-size: 1.5rem;
-    }
-    .problem-card .card-icon { background: rgba(196,148,61,0.1); }
-    .solution-card .card-icon { background: rgba(196,148,61,0.2); }
-
-    /* ===== STEPS ===== */
-    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .step-card {
-      text-align: center;
-      padding: 40px 32px;
-      background: var(--white);
-      border-radius: 16px;
-      border: 1px solid var(--border);
+      font-size: 1.75rem; color: white; font-weight: 700;
       position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
-    .step-num {
-      width: 48px; height: 48px;
-      background: var(--navy);
-      color: var(--gold-light);
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
+    .teacher-avatar::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border: 2px dashed rgba(74, 124, 111, 0.25);
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
     }
-    .step-card h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 12px; }
-    .step-card p { color: var(--text-light); font-size: 0.9375rem; }
-    .step-arrow {
-      display: none;
-      position: absolute; right: -22px; top: 50%;
-      color: var(--gold);
-      font-size: 1.25rem;
-      z-index: 2;
+    .teacher-card h4 { font-size: 1rem; color: var(--forest); margin-bottom: 4px; }
+    .teacher-subj {
+      font-size: 0.6875rem;
+      color: var(--amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
     }
-    .step-card:not(:last-child) .step-arrow { display: block; }
-
-    /* ===== BENEFITS ===== */
-    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .benefit-item {
-      display: flex; gap: 20px;
-      padding: 32px;
-      background: var(--cream);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: border-color 0.3s;
-    }
-    .benefit-item:hover { border-color: var(--gold); }
-    .benefit-icon {
-      flex-shrink: 0;
-      width: 44px; height: 44px;
-      background: var(--navy);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold-light);
-      font-size: 1.25rem;
-    }
-    .benefit-item h4 { font-size: 1.0625rem; color: var(--navy); margin-bottom: 6px; }
-    .benefit-item p { color: var(--text-light); font-size: 0.875rem; line-height: 1.6; }
+    .teacher-card p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.55; }
 
     /* ===== TESTIMONIALS ===== */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .testimonial-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px 32px;
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
-    .testimonial-stars { color: var(--gold); font-size: 0.875rem; letter-spacing: 2px; margin-bottom: 16px; }
+    .testimonial-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      border-color: var(--sage-light);
+    }
+    .testimonial-stars {
+      color: var(--amber);
+      font-size: 0.9375rem;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
     .testimonial-text {
       font-size: 0.9375rem;
       color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 20px;
+      line-height: 1.75;
+      margin-bottom: 24px;
       font-style: italic;
+      flex: 1;
     }
-    .testimonial-author { font-weight: 600; font-size: 0.875rem; color: var(--navy); }
-    .testimonial-role { font-size: 0.8125rem; color: var(--text-muted); }
+    .testimonial-author {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .testimonial-ava {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    .testimonial-name { font-weight: 700; font-size: 0.875rem; color: var(--forest); }
+    .testimonial-role { font-size: 0.75rem; color: var(--text-muted); }
 
     /* ===== PRICING ===== */
-    .pricing-card {
-      max-width: 640px;
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 780px;
       margin: 0 auto;
+    }
+    .pricing-card {
       background: var(--white);
-      border: 2px solid var(--gold);
-      border-radius: 20px;
-      padding: 56px 48px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 44px 36px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      transition: all 0.3s ease;
     }
-    .pricing-card::before {
+    .pricing-card:hover {
+      box-shadow: 0 12px 48px rgba(26, 60, 52, 0.06);
+    }
+    .pricing-card.featured {
+      border: 2px solid var(--amber);
+      background: var(--white);
+    }
+    .pricing-card.featured::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      background: linear-gradient(90deg, var(--amber), var(--amber-light));
     }
     .pricing-badge {
       display: inline-block;
-      background: rgba(196,148,61,0.1);
-      color: var(--gold);
-      padding: 6px 16px;
+      background: var(--amber-pale);
+      color: var(--amber);
+      padding: 5px 14px;
       border-radius: 100px;
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+    }
+    .pricing-plan {
+      font-family: 'Fraunces', serif;
+      font-size: 1.125rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+      font-weight: 600;
     }
     .pricing-amount {
-      font-family: 'DM Serif Display', serif;
-      font-size: 3.5rem;
-      color: var(--navy);
+      font-family: 'Fraunces', serif;
+      font-size: 3rem;
+      color: var(--forest);
+      font-weight: 700;
       letter-spacing: -0.03em;
+      margin-bottom: 4px;
     }
-    .pricing-amount span { font-size: 1.25rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; }
-    .pricing-note { color: var(--text-light); margin: 8px 0 32px; font-size: 0.9375rem; }
+    .pricing-amount span {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 400;
+    }
+    .pricing-note {
+      color: var(--text-light);
+      font-size: 0.8125rem;
+      margin-bottom: 28px;
+    }
     .pricing-features {
       list-style: none;
       text-align: left;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
     .pricing-features li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--cream-dark);
-      display: flex; align-items: center; gap: 12px;
-      font-size: 0.9375rem; color: var(--text);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--stone);
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.875rem; color: var(--text);
     }
     .pricing-features li::before {
       content: '';
-      width: 20px; height: 20px; flex-shrink: 0;
+      width: 18px; height: 18px; flex-shrink: 0;
       background: var(--success);
       border-radius: 50%;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-      background-size: 14px; background-repeat: no-repeat; background-position: center;
+      background-size: 12px; background-repeat: no-repeat; background-position: center;
     }
 
     /* ===== FAQ ===== */
-    .faq-list { max-width: 720px; margin: 0 auto; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      text-align: left; padding: 24px 0;
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--forest); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      transition: color 0.2s;
     }
-    .faq-question {
-      width: 100%;
-      background: none; border: none;
-      text-align: left;
-      padding: 24px 0;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.0625rem;
-      font-weight: 600;
-      color: var(--navy);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .faq-question:hover { color: var(--gold); }
-    .faq-icon {
+    .faq-q:hover { color: var(--sage); }
+    .faq-arrow {
       flex-shrink: 0;
-      width: 28px; height: 28px;
+      width: 32px; height: 32px;
       border-radius: 50%;
-      border: 2px solid var(--border);
+      border: 1.5px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      transition: all 0.3s;
-      font-size: 1.25rem;
-      color: var(--text-muted);
+      transition: all 0.4s ease;
+      font-size: 1.25rem; color: var(--text-muted);
     }
-    .faq-item.open .faq-icon { border-color: var(--gold); color: var(--gold); transform: rotate(45deg); }
-    .faq-answer {
+    .faq-item.open .faq-arrow {
+      border-color: var(--sage);
+      color: var(--sage);
+      transform: rotate(45deg);
+      background: rgba(74, 124, 111, 0.05);
+    }
+    .faq-a {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
+      transition: max-height 0.45s ease;
     }
-    .faq-item.open .faq-answer { max-height: 300px; }
-    .faq-answer-inner {
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a-inner {
       padding-bottom: 24px;
       color: var(--text-light);
       font-size: 0.9375rem;
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
     /* ===== FORM SECTION ===== */
     .form-section {
-      background: var(--navy);
-      padding: 96px 0;
+      background: var(--forest);
+      padding: 100px 0;
       position: relative;
       overflow: hidden;
     }
     .form-section::before {
       content: '';
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 120%; height: 100%;
-      background: radial-gradient(ellipse at center top, rgba(196,148,61,0.06) 0%, transparent 60%);
+      position: absolute; top: -40%; left: 30%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(74, 124, 111, 0.15) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .form-section::after {
+      content: '';
+      position: absolute; bottom: -30%; right: 10%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(212, 145, 61, 0.06) 0%, transparent 60%);
+      border-radius: 50%;
     }
     .form-grid {
       display: grid;
@@ -575,40 +817,39 @@
       color: var(--white);
       font-size: clamp(1.75rem, 3vw, 2.25rem);
       margin-bottom: 20px;
+      letter-spacing: -0.02em;
     }
-    .form-content h2 em { color: var(--gold-light); font-style: italic; }
-    .form-content p {
-      color: rgba(255,255,255,0.65);
+    .form-content h2 em { color: var(--amber-light); font-style: italic; }
+    .form-content > p {
+      color: rgba(255,255,255,0.6);
       font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 32px;
+      line-height: 1.8;
+      margin-bottom: 36px;
     }
-    .form-trust {
-      display: flex; flex-direction: column; gap: 12px;
-    }
+    .form-trust { display: flex; flex-direction: column; gap: 14px; }
     .form-trust-item {
       display: flex; align-items: center; gap: 10px;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.5);
       font-size: 0.875rem;
     }
-    .form-trust-item svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+    .form-trust-item svg { width: 18px; height: 18px; color: var(--amber); flex-shrink: 0; }
     .form-card {
       background: var(--white);
-      border-radius: 20px;
+      border-radius: 24px;
       padding: 44px 40px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
     }
     .form-card h3 {
       font-size: 1.375rem;
-      color: var(--navy);
-      margin-bottom: 8px;
+      color: var(--forest);
+      margin-bottom: 6px;
     }
     .form-card > p {
       color: var(--text-muted);
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       margin-bottom: 28px;
     }
-    .form-group { margin-bottom: 18px; }
+    .form-group { margin-bottom: 16px; }
     .form-group label {
       display: block;
       font-size: 0.8125rem;
@@ -619,10 +860,10 @@
     .form-group input,
     .form-group select {
       width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-family: 'Libre Franklin', sans-serif;
       font-size: 0.9375rem;
       color: var(--text);
       background: var(--cream);
@@ -632,81 +873,101 @@
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(196,148,61,0.1);
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(74, 124, 111, 0.1);
     }
     .form-group input::placeholder { color: var(--text-muted); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-submit {
-      width: 100%;
-      margin-top: 8px;
-    }
-    .form-submit .btn-primary { width: 100%; justify-content: center; font-size: 1.0625rem; padding: 16px; }
+    .form-submit { margin-top: 12px; }
+    .form-submit .btn-primary { width: 100%; justify-content: center; font-size: 1rem; padding: 16px; border-radius: 12px; }
     .form-disclaimer {
       text-align: center;
       margin-top: 14px;
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
       color: var(--text-muted);
     }
     .form-success {
       display: none;
       text-align: center;
-      padding: 40px 20px;
+      padding: 44px 20px;
     }
     .form-success.show { display: block; }
+    .form-success-icon { font-size: 3rem; margin-bottom: 16px; }
     .form-success h3 { color: var(--success); font-size: 1.5rem; margin-bottom: 12px; }
-    .form-success p { color: var(--text-light); }
+    .form-success p { color: var(--text-light); line-height: 1.7; }
 
     /* ===== FOOTER ===== */
     .footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 40px 0;
+      background: var(--forest);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 36px 0;
       text-align: center;
     }
-    .footer p { color: rgba(255,255,255,0.35); font-size: 0.8125rem; }
-    .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    .footer a:hover { color: var(--gold); }
+    .footer p { color: rgba(255,255,255,0.3); font-size: 0.8125rem; }
+    .footer a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer a:hover { color: var(--amber); }
 
     /* ===== ANIMATIONS ===== */
-    .fade-in {
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(28px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .fade-in.visible {
+    .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal-stagger.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+    .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.08s; }
+    .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.16s; }
+    .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.24s; }
+    .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.32s; }
+    .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.4s; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .hero-photo { max-width: 360px; margin: 0 auto; }
-      .hero-photo-inner { max-height: 380px; border-radius: 16px; }
-      .hero-photo-badge { left: 0; }
-      .problem-grid,
-      .form-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-      .step-arrow { display: none !important; }
-      .benefits-grid { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-content { padding-bottom: 0; }
+      .hero-photo { max-width: 380px; margin: 0 auto; }
+      .hero-photo-inner img { height: 360px; }
+      .hero-float-card.left { left: 0; bottom: 40px; }
+      .hero-float-card.right { right: 0; top: 20px; }
+      .ps-grid, .form-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+      .steps-grid::before { display: none; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .teachers-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
       .classroom-body { grid-template-columns: 1fr; }
       .classroom-sidebar { border-left: none; border-top: 1px solid var(--border); }
       .hero { padding: 120px 0 0; }
       .section { padding: 72px 0; }
       .form-section { padding: 72px 0; }
       .form-card { padding: 32px 24px; }
-      .pricing-card { padding: 40px 28px; }
-      .proof-bar .container { gap: 32px; }
+      .proof-bar .container { gap: 28px; }
+      .nav-links { display: none; }
     }
-
     @media (max-width: 600px) {
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn-primary, .hero-actions .btn-ghost { justify-content: center; }
+      .benefits-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-      .nav-cta { display: none; }
-      .teachers-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+      .teachers-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+      .hero-float-card { display: none; }
     }
   </style>
 </head>
@@ -716,7 +977,13 @@
   <nav class="nav" id="nav">
     <div class="container">
       <a href="#" class="nav-logo">Legacy <span>Online School</span></a>
-      <a href="#apply" class="nav-cta cta-button">Book Free Consultation</a>
+      <div class="nav-links">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#benefits" class="nav-link">Benefits</a>
+        <a href="#pricing" class="nav-link">Tuition</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+      <a href="#apply" class="nav-cta cta-button" data-cta="nav">Try 3 Free Classes</a>
     </div>
   </nav>
 
@@ -726,32 +993,39 @@
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">MCSF Scholarship Accepted</div>
-          <h1>Your MCSF Scholarship Can Pay for a <em>Top-Rated Online Education</em></h1>
-          <p class="hero-sub">Legacy Online School is an accredited American K-12 school trusted by families worldwide. Tuition starts at just $149/month &mdash; and your Maine scholarship can cover a significant portion.</p>
+          <h1>Your MCSF Scholarship Opens the Door to a <em>World-Class Education</em></h1>
+          <p class="hero-sub">Legacy Online School is a WASC-accredited American K-12 school trusted by families in 15+ countries. Use your Maine scholarship to cover tuition — starting at just $149/month.</p>
           <div class="hero-actions">
-            <a href="#classroom" class="btn-primary cta-button">
-              Watch a Sample Class
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/></svg>
+            <a href="#apply" class="btn-primary cta-button" data-cta="hero-primary">
+              Try 3 Free Classes
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#apply" class="btn-outline cta-button">
-              Check Your Eligibility
+            <a href="#classroom" class="btn-ghost cta-button" data-cta="hero-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/></svg>
+              Watch a Sample Class
             </a>
           </div>
           <p class="hero-micro">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Free 5-minute consultation. No commitment required.
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            No commitment required. Cancel anytime.
           </p>
         </div>
-        <!-- Replace with real student photo in production -->
         <div class="hero-photo">
           <div class="hero-photo-inner">
             <img src="hero-student.jpg" alt="Student studying online with Legacy Online School" loading="eager">
           </div>
-          <div class="hero-photo-badge">
-            <div class="hero-photo-badge-icon">&#10003;</div>
+          <div class="hero-float-card left">
+            <div class="float-icon green">✓</div>
             <div>
-              <strong>WASC Accredited</strong>
-              <span>Recognized nationwide</span>
+              <div class="float-label">Accreditation</div>
+              <div class="float-value">WASC Accredited</div>
+            </div>
+          </div>
+          <div class="hero-float-card right">
+            <div class="float-icon amber">$</div>
+            <div>
+              <div class="float-label">MCSF Covers Up To</div>
+              <div class="float-value">$900/year</div>
             </div>
           </div>
         </div>
@@ -759,11 +1033,11 @@
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
+  <!-- PROOF BAR -->
   <div class="proof-bar">
     <div class="container">
       <div class="proof-item">
-        <div class="proof-number">30+</div>
+        <div class="proof-number">15+</div>
         <div class="proof-label">Countries</div>
       </div>
       <div class="proof-item">
@@ -771,8 +1045,8 @@
         <div class="proof-label">Accredited</div>
       </div>
       <div class="proof-item">
-        <div class="proof-number">4.87</div>
-        <div class="proof-label">Parent Rating</div>
+        <div class="proof-number">~10</div>
+        <div class="proof-label">Students / Class</div>
       </div>
       <div class="proof-item">
         <div class="proof-number">K-12</div>
@@ -780,7 +1054,7 @@
       </div>
       <div class="proof-item">
         <div class="proof-number">$149</div>
-        <div class="proof-label">From / month</div>
+        <div class="proof-label">From / Month</div>
       </div>
     </div>
   </div>
@@ -788,21 +1062,32 @@
   <!-- PROBLEM / SOLUTION -->
   <section class="section">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">The Opportunity</span>
-        <h2>Your Scholarship Shouldn't Go Unused</h2>
-        <p>Many Maine families qualify for the MCSF scholarship but don't know where to apply it. Legacy makes it simple.</p>
+      <div class="section-header reveal">
+        <span class="section-tag">The Opportunity</span>
+        <h2>Your Scholarship Shouldn't Go to Waste</h2>
+        <p>Many Maine families qualify for the MCSF scholarship but struggle to find an approved school that fits. Legacy makes it simple.</p>
       </div>
-      <div class="problem-grid fade-in">
-        <div class="problem-card">
-          <div class="card-icon">?</div>
+      <div class="ps-grid reveal">
+        <div class="ps-card problem">
+          <div class="card-emoji">&#128566;</div>
           <h3>The Challenge</h3>
-          <p>Your family has been awarded the Maine Children's Scholarship Fund, but finding an approved school that fits your child's needs &mdash; and your budget &mdash; feels overwhelming. Traditional private schools are expensive, and you're not sure if online options qualify.</p>
+          <p>Your family earned the MCSF scholarship, but finding an approved school that's actually good — and fits your budget — feels overwhelming.</p>
+          <ul class="ps-list">
+            <li>Local private schools are too expensive even with aid</li>
+            <li>Unsure which online schools qualify for MCSF</li>
+            <li>Worried about quality of virtual education</li>
+          </ul>
         </div>
-        <div class="solution-card">
-          <div class="card-icon">&#10003;</div>
+        <div class="ps-card solution">
+          <div class="card-emoji">&#127775;</div>
           <h3>The Solution</h3>
-          <p>Legacy Online School accepts MCSF scholarships and provides accredited K-12 education from $149/month. Your scholarship can cover a significant portion of tuition, and we'll guide you through every step of the application process.</p>
+          <p>Legacy Online School accepts MCSF scholarships and delivers accredited K-12 education with certified American teachers — from $149/month.</p>
+          <ul class="ps-list">
+            <li>Scholarship covers up to $900/year of tuition</li>
+            <li>WASC-accredited, recognized nationwide</li>
+            <li>Small live classes with ~10 students each</li>
+            <li>We handle the scholarship paperwork for you</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -811,102 +1096,88 @@
   <!-- HOW IT WORKS -->
   <section class="section section-alt" id="how-it-works">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">How It Works</span>
-        <h2>Three Simple Steps to Get Started</h2>
-        <p>From scholarship verification to your child's first class &mdash; we make the process effortless.</p>
+      <div class="section-header reveal">
+        <span class="section-tag">How It Works</span>
+        <h2>Three Steps to Get Started</h2>
+        <p>From your first question to your child's first class — we make it effortless.</p>
       </div>
-      <div class="steps-grid fade-in">
+      <div class="steps-grid reveal-stagger">
         <div class="step-card">
           <div class="step-num">1</div>
-          <h3>Check Your Eligibility</h3>
-          <p>Verify your family qualifies for the Maine Children's Scholarship Fund. We'll help you understand the requirements and timeline.</p>
-          <span class="step-arrow">&rarr;</span>
+          <h3>Try 3 Free Classes</h3>
+          <p>Experience Legacy firsthand with three complimentary online classes. See the teachers, the platform, and how your child responds — no commitment required.</p>
         </div>
         <div class="step-card">
           <div class="step-num">2</div>
-          <h3>Apply to Legacy</h3>
-          <p>Complete a simple enrollment form. Our team will guide you through applying your MCSF scholarship to cover tuition.</p>
-          <span class="step-arrow">&rarr;</span>
+          <h3>Apply Your Scholarship</h3>
+          <p>Our enrollment team walks you through applying your MCSF scholarship to Legacy tuition. We handle the paperwork and verify everything for you.</p>
         </div>
         <div class="step-card">
           <div class="step-num">3</div>
           <h3>Start Learning</h3>
-          <p>Your child begins their accredited online education with certified American teachers in small, personalized classes.</p>
+          <p>Your child begins their accredited online education with certified American teachers in small, personalized classes from anywhere in Maine.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- BENEFITS -->
-  <section class="section">
+  <section class="section" id="benefits">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">Why Legacy</span>
+      <div class="section-header reveal">
+        <span class="section-tag">Why Legacy</span>
         <h2>An Education Worth Your Scholarship</h2>
-        <p>Quality, flexibility, and affordability &mdash; everything your family needs from a K-12 school.</p>
+        <p>Quality, flexibility, and affordability — everything your family needs from a K-12 school.</p>
       </div>
-      <div class="benefits-grid fade-in">
-        <div class="benefit-item">
-          <div class="benefit-icon">&#127891;</div>
-          <div>
-            <h4>US-Accredited Curriculum</h4>
-            <p>WASC & Cognia accredited. Recognized diploma accepted by colleges nationwide. AP courses available.</p>
-          </div>
+      <div class="benefits-grid reveal-stagger">
+        <div class="benefit-card">
+          <div class="benefit-emoji">&#127891;</div>
+          <h4>WASC-Accredited Curriculum</h4>
+          <p>Recognized diploma accepted by colleges and universities nationwide. AP courses available for high school students.</p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">&#128105;&#8205;&#127979;</div>
-          <div>
-            <h4>Certified American Teachers</h4>
-            <p>Small class sizes with an 8:1 student-teacher ratio. Every teacher is certified and dedicated to your child's success.</p>
-          </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">&#128105;&#8205;&#127979;</div>
+          <h4>Certified American Teachers</h4>
+          <p>Small classes with ~10 students. Every teacher is state-certified and dedicated to each child's individual success.</p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">&#128336;</div>
-          <div>
-            <h4>Flexible Schedule</h4>
-            <p>Live classes, self-paced learning, or a combination. Study from anywhere, at your child's pace, with rolling enrollment.</p>
-          </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">&#128336;</div>
+          <h4>Flexible Schedule</h4>
+          <p>Live classes, self-paced learning, or both. Study from anywhere in Maine with rolling enrollment — start anytime.</p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">&#128176;</div>
-          <div>
-            <h4>MCSF Scholarship Accepted</h4>
-            <p>Your Maine Children's Scholarship Fund covers a significant portion of tuition. We handle the paperwork for you.</p>
-          </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">&#128176;</div>
+          <h4>MCSF Scholarship Accepted</h4>
+          <p>Your Maine scholarship covers up to $900/year. We guide you through every step of the application process.</p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">&#127758;</div>
-          <div>
-            <h4>Global Learning Community</h4>
-            <p>Students from 30+ countries. A safe, bully-free environment where every child is seen and supported.</p>
-          </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">&#127758;</div>
+          <h4>Global Learning Community</h4>
+          <p>Students from 15+ countries. A safe, bully-free environment where every child is seen and supported.</p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">&#127942;</div>
-          <div>
-            <h4>College-Ready Graduates</h4>
-            <p>95% of graduates are accepted to their first or second choice university. SAT/ACT prep and college counseling included.</p>
-          </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">&#127942;</div>
+          <h4>College-Ready Graduates</h4>
+          <p>SAT/ACT prep and college counseling included. Graduates consistently earn acceptance to top universities.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INSIDE THE CLASSROOM -->
+  <!-- CLASSROOM -->
   <section class="section section-alt" id="classroom">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">Inside the Classroom</span>
+      <div class="section-header reveal">
+        <span class="section-tag">Inside the Classroom</span>
         <h2>See How Your Child Will Learn</h2>
         <p>Small live classes with certified teachers, interactive tools, and students from around the world.</p>
       </div>
-      <div class="classroom-window fade-in">
-        <div class="classroom-titlebar">
+      <div class="classroom-window reveal">
+        <div class="classroom-bar">
           <div class="classroom-dot"></div>
           <div class="classroom-dot"></div>
           <div class="classroom-dot"></div>
-          <span>Legacy Online School &mdash; Live Class</span>
+          <span class="classroom-bar-title">Legacy Online School — Live Class</span>
         </div>
         <div class="classroom-body">
           <div class="classroom-main">
@@ -917,34 +1188,34 @@
           <div class="classroom-sidebar">
             <h5>Students Online (10)</h5>
             <div class="classroom-student">
-              <div class="classroom-student-avatar" style="background:#3A7D5C;">EA</div>
-              <span class="classroom-student-name">Emma A.</span>
-              <span class="classroom-student-flag">&#127482;&#127480;</span>
+              <div class="cls-avatar" style="background:#2D7A4F;">EA</div>
+              <span class="cls-name">Emma A.</span>
+              <span class="cls-flag">&#127482;&#127480;</span>
             </div>
             <div class="classroom-student">
-              <div class="classroom-student-avatar" style="background:#C4943D;">LT</div>
-              <span class="classroom-student-name">Lucas T.</span>
-              <span class="classroom-student-flag">&#127463;&#127479;</span>
+              <div class="cls-avatar" style="background:#D4913D;">LT</div>
+              <span class="cls-name">Lucas T.</span>
+              <span class="cls-flag">&#127463;&#127479;</span>
             </div>
             <div class="classroom-student">
-              <div class="classroom-student-avatar" style="background:#6B4C9A;">SK</div>
-              <span class="classroom-student-name">Sofia K.</span>
-              <span class="classroom-student-flag">&#127466;&#127480;</span>
+              <div class="cls-avatar" style="background:#6B4C9A;">SK</div>
+              <span class="cls-name">Sofia K.</span>
+              <span class="cls-flag">&#127466;&#127480;</span>
             </div>
             <div class="classroom-student">
-              <div class="classroom-student-avatar" style="background:#2A3D66;">AM</div>
-              <span class="classroom-student-name">Aiden M.</span>
-              <span class="classroom-student-flag">&#127468;&#127463;</span>
+              <div class="cls-avatar" style="background:#1A3C34;">AM</div>
+              <span class="cls-name">Aiden M.</span>
+              <span class="cls-flag">&#127468;&#127463;</span>
             </div>
             <div class="classroom-student">
-              <div class="classroom-student-avatar" style="background:#C4573D;">YN</div>
-              <span class="classroom-student-name">Yuki N.</span>
-              <span class="classroom-student-flag">&#127471;&#127477;</span>
+              <div class="cls-avatar" style="background:#C0614D;">YN</div>
+              <span class="cls-name">Yuki N.</span>
+              <span class="cls-flag">&#127471;&#127477;</span>
             </div>
             <div class="classroom-student">
-              <div class="classroom-student-avatar" style="background:#3A5080;">MR</div>
-              <span class="classroom-student-name">Maya R.</span>
-              <span class="classroom-student-flag">&#127482;&#127480;</span>
+              <div class="cls-avatar" style="background:#4A7C6F;">MR</div>
+              <span class="cls-name">Maya R.</span>
+              <span class="cls-flag">&#127482;&#127480;</span>
             </div>
           </div>
         </div>
@@ -952,38 +1223,38 @@
     </div>
   </section>
 
-  <!-- MEET OUR TEACHERS -->
+  <!-- TEACHERS -->
   <section class="section">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">Our Team</span>
+      <div class="section-header reveal">
+        <span class="section-tag">Our Team</span>
         <h2>Meet the Teachers Behind Legacy</h2>
         <p>Certified American educators with a passion for personalized online learning.</p>
       </div>
-      <div class="teachers-grid fade-in">
+      <div class="teachers-grid reveal-stagger">
         <div class="teacher-card">
-          <div class="teacher-avatar" style="background: linear-gradient(135deg, #3A7D5C, #2D6148);">SA</div>
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #2D7A4F, #1D5A38);">SA</div>
           <h4>Sarah Anderson</h4>
           <div class="teacher-subj">Mathematics</div>
-          <p>M.Ed., 12 years teaching. Specializes in making math approachable for every learner.</p>
+          <p>M.Ed., 12 years teaching. Makes math approachable for every learner.</p>
         </div>
         <div class="teacher-card">
-          <div class="teacher-avatar" style="background: linear-gradient(135deg, #2A3D66, #1B2A4A);">JC</div>
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #1A3C34, #0F2420);">JC</div>
           <h4>James Carter</h4>
           <div class="teacher-subj">Science</div>
-          <p>Ph.D. in Biology. Brings real-world research into engaging virtual labs and lessons.</p>
+          <p>Ph.D. in Biology. Brings real-world research into virtual labs.</p>
         </div>
         <div class="teacher-card">
-          <div class="teacher-avatar" style="background: linear-gradient(135deg, #C4943D, #A87D2F);">MR</div>
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #D4913D, #B87A2E);">MR</div>
           <h4>Maria Rodriguez</h4>
-          <div class="teacher-subj">English &amp; Literature</div>
-          <p>Published author. Helps students find their voice through creative writing and analysis.</p>
+          <div class="teacher-subj">English & Literature</div>
+          <p>Published author. Helps students find their voice through writing.</p>
         </div>
         <div class="teacher-card">
-          <div class="teacher-avatar" style="background: linear-gradient(135deg, #6B4C9A, #553C7A);">DK</div>
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #6B4C9A, #533A7A);">DK</div>
           <h4>David Kim</h4>
-          <div class="teacher-subj">History &amp; Social Studies</div>
-          <p>Former diplomat. Connects history to current events with a global perspective.</p>
+          <div class="teacher-subj">History</div>
+          <p>Former diplomat. Connects history to current events with global perspective.</p>
         </div>
       </div>
     </div>
@@ -992,42 +1263,41 @@
   <!-- TESTIMONIALS -->
   <section class="section section-alt">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">Parent Stories</span>
-        <h2>Trusted by Families Worldwide</h2>
-        <p>Rated 4.87 out of 5 by parents on Reviews.io</p>
+      <div class="section-header reveal">
+        <span class="section-tag">Parent Stories</span>
+        <h2>Trusted by Families Across Maine</h2>
       </div>
-      <div class="testimonials-grid fade-in">
+      <div class="testimonials-grid reveal-stagger">
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"The teachers genuinely care about each student. My daughter went from struggling in public school to thriving at Legacy. The scholarship made it affordable for our family."</p>
-          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
-            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3A7D5C,#2D6148);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:0.8125rem;flex-shrink:0;">SM</div>
+          <p class="testimonial-text">"The teachers genuinely care about each student. My daughter went from struggling in public school to thriving at Legacy. The MCSF scholarship made it affordable for our family."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-ava" style="background:linear-gradient(135deg,#2D7A4F,#1D5A38);">SM</div>
             <div>
-              <div class="testimonial-author">Sarah M.</div>
-              <div class="testimonial-role">Parent of a 7th grader, Maine</div>
+              <div class="testimonial-name">Sarah M.</div>
+              <div class="testimonial-role">Parent of a 7th grader, Portland ME</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"We were worried about online school quality, but Legacy exceeded our expectations. Small classes, real teachers, and a diploma that colleges respect. Worth every penny."</p>
-          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
-            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#2A3D66,#1B2A4A);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:0.8125rem;flex-shrink:0;">JL</div>
+          <p class="testimonial-text">"We worried about online school quality, but Legacy exceeded every expectation. Small classes, real teachers, and a diploma colleges respect. The application process was effortless."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-ava" style="background:linear-gradient(135deg,#1A3C34,#0F2420);">JK</div>
             <div>
-              <div class="testimonial-author">James &amp; Linda K.</div>
-              <div class="testimonial-role">Parents of two students, K-12</div>
+              <div class="testimonial-name">James & Linda K.</div>
+              <div class="testimonial-role">Parents of two students, Bangor ME</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"The flexibility is incredible. My son can learn at his own pace, and the support team is always there when we need help. The MCSF scholarship process was straightforward."</p>
-          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
-            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#C4943D,#A87D2F);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:0.8125rem;flex-shrink:0;">MR</div>
+          <p class="testimonial-text">"The flexibility is incredible. My son can learn at his own pace, and the support team always answers within hours. The scholarship process was straightforward — they did most of the work."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-ava" style="background:linear-gradient(135deg,#D4913D,#B87A2E);">MR</div>
             <div>
-              <div class="testimonial-author">Michelle R.</div>
-              <div class="testimonial-role">Parent of a 4th grader, Maine</div>
+              <div class="testimonial-name">Michelle R.</div>
+              <div class="testimonial-role">Parent of a 4th grader, Augusta ME</div>
             </div>
           </div>
         </div>
@@ -1036,66 +1306,78 @@
   </section>
 
   <!-- PRICING -->
-  <section class="section">
+  <section class="section" id="pricing">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">Tuition</span>
+      <div class="section-header reveal">
+        <span class="section-tag">Tuition</span>
         <h2>Affordable with Your Scholarship</h2>
         <p>Your MCSF scholarship can cover a significant portion of Legacy's tuition.</p>
       </div>
-      <div class="pricing-card fade-in">
-        <div class="pricing-badge">MCSF Scholarship Eligible</div>
-        <div class="pricing-amount">$149 <span>/month</span></div>
-        <p class="pricing-note">Starting tuition. MCSF Hybrid Scholarship covers up to $900/year.</p>
-        <ul class="pricing-features">
-          <li>WASC & Cognia accredited K-12 education</li>
-          <li>Live classes with certified American teachers</li>
-          <li>8:1 student-teacher ratio</li>
-          <li>Personal Learning Support Specialist</li>
-          <li>AP courses and college prep included</li>
-          <li>Flexible scheduling &mdash; learn from anywhere</li>
-          <li>MCSF scholarship application guidance</li>
-          <li>Rolling enrollment &mdash; start any time</li>
-        </ul>
-        <a href="#apply" class="btn-primary cta-button" style="width: 100%; justify-content: center;">
-          Book Your Free Consultation
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+      <div class="pricing-grid reveal">
+        <div class="pricing-card">
+          <div class="pricing-plan">Standard Tuition</div>
+          <div class="pricing-amount">$149 <span>/mo</span></div>
+          <p class="pricing-note">$1,788 per year</p>
+          <ul class="pricing-features">
+            <li>WASC-accredited curriculum</li>
+            <li>Live classes with certified teachers</li>
+            <li>~10 students per class</li>
+            <li>Personal Learning Specialist</li>
+            <li>Rolling enrollment</li>
+          </ul>
+          <a href="#apply" class="btn-ghost cta-button" data-cta="pricing-standard" style="width:100%;justify-content:center;border-color:var(--border);color:var(--forest);border-radius:12px;">Learn More</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">With MCSF Scholarship</div>
+          <div class="pricing-amount" style="color:var(--success);">~$74 <span>/mo</span></div>
+          <p class="pricing-note">After scholarship covers up to $900/year</p>
+          <ul class="pricing-features">
+            <li>Everything in Standard</li>
+            <li>AP courses & college prep</li>
+            <li>MCSF application guidance</li>
+            <li>Scholarship paperwork handled</li>
+            <li>3 free trial classes</li>
+          </ul>
+          <a href="#apply" class="btn-primary cta-button" data-cta="pricing-mcsf" style="width:100%;justify-content:center;border-radius:12px;">
+            Get Started Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section section-alt">
+  <section class="section section-alt" id="faq">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">FAQ</span>
+      <div class="section-header reveal">
+        <span class="section-tag">FAQ</span>
         <h2>Common Questions</h2>
       </div>
-      <div class="faq-list fade-in">
+      <div class="faq-list reveal">
         <div class="faq-item">
-          <button class="faq-question">What is the Maine Children's Scholarship Fund (MCSF)?<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">MCSF (also known as MECSF) provides scholarships to Maine families with qualifying income levels to help cover tuition at approved private schools, including online schools like Legacy. The Hybrid Scholarship covers 65% of tuition costs, up to $900 per child per year.</div></div>
+          <button class="faq-q">What is the Maine Children's Scholarship Fund (MCSF)?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">MCSF (also known as MECSF) provides scholarships to Maine families with qualifying income levels to help cover tuition at approved private schools, including online schools like Legacy. The Hybrid Scholarship covers 65% of tuition costs, up to $900 per child per year.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">How much does Legacy Online School cost?<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Tuition starts at $149/month ($1,788/year). Your MCSF scholarship can cover up to $900/year, reducing your out-of-pocket cost to as low as $74/month. Additional discounts are available for annual and semester payments.</div></div>
+          <button class="faq-q">How much does Legacy Online School cost?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Tuition starts at $149/month ($1,788/year). Your MCSF scholarship can cover up to $900/year, reducing your out-of-pocket cost to approximately $74/month. Additional discounts are available for annual and semester payments.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Is Legacy Online School accredited?<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Yes. Legacy is accredited by both WASC (Western Association of Schools and Colleges) and Cognia &mdash; recognized by the U.S. Department of Education. Our diplomas and transcripts are accepted by colleges and universities nationwide.</div></div>
+          <button class="faq-q">Is Legacy Online School accredited?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Legacy is accredited by WASC (Western Association of Schools and Colleges), recognized by the U.S. Department of Education. Our diplomas and transcripts are accepted by colleges and universities nationwide.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Can my child start mid-year?<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We offer rolling enrollment with multiple start dates throughout the year. Your child can begin their education at Legacy at any time &mdash; no need to wait for a new semester.</div></div>
+          <button class="faq-q">Can I try before enrolling?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Absolutely! We offer 3 free online trial classes so your child can experience Legacy firsthand. There's no commitment required — see the teachers, the platform, and how your child responds before making any decisions.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">What grades do you offer?<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">We offer complete K-12 education &mdash; from kindergarten through 12th grade. This includes elementary (K-5), middle school (6-8), and high school (9-12) programs, along with AP courses and college preparation.</div></div>
+          <button class="faq-q">Can my child start mid-year?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. We offer rolling enrollment with multiple start dates throughout the year. Your child can begin at Legacy anytime — no need to wait for a new semester.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">How do I apply my MCSF scholarship to Legacy?<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Book a free consultation with our team, and we'll walk you through the entire process step by step. We'll help you verify your eligibility, complete the necessary forms, and ensure your scholarship is properly applied to your tuition.</div></div>
+          <button class="faq-q">How do I apply my MCSF scholarship?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Start by trying 3 free classes. When you're ready to enroll, our team walks you through the MCSF application step by step. We help verify your eligibility, complete the forms, and ensure your scholarship is properly applied to tuition.</div></div>
         </div>
       </div>
     </div>
@@ -1105,29 +1387,29 @@
   <section class="form-section" id="apply">
     <div class="container">
       <div class="form-grid">
-        <div class="form-content fade-in">
-          <span class="section-label" style="color: var(--gold);">Get Started</span>
-          <h2>Book Your <em>Free Consultation</em></h2>
-          <p>Schedule a quick 5-minute call with our enrollment team. We'll answer your questions about Legacy, walk you through the MCSF scholarship process, and help you get started.</p>
+        <div class="form-content reveal">
+          <span class="section-tag" style="color: var(--amber);">Get Started</span>
+          <h2>Try 3 Free <em>Online Classes</em></h2>
+          <p>Let your child experience Legacy firsthand. No commitment, no credit card — just three classes to see if it's the right fit for your family.</p>
           <div class="form-trust">
             <div class="form-trust-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-              No commitment required
+              3 free classes, no commitment
             </div>
             <div class="form-trust-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-              Takes only 5 minutes
+              We guide you through the MCSF process
             </div>
             <div class="form-trust-item">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              We guide you through MCSF application
+              WASC-accredited, recognized nationwide
             </div>
           </div>
         </div>
-        <div class="form-card fade-in">
+        <div class="form-card reveal">
           <form id="applicationForm">
-            <h3>Request a Free Consultation</h3>
-            <p>Fill out the form and we'll contact you within 24 hours.</p>
+            <h3>Request Free Trial Classes</h3>
+            <p>Fill out the form and we'll set up your child's 3 free classes within 24 hours.</p>
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name</label>
@@ -1166,16 +1448,17 @@
               </select>
             </div>
             <div class="form-submit">
-              <button type="submit" class="btn-primary cta-button">
-                Book My Free Consultation
+              <button type="submit" class="btn-primary cta-button" data-cta="form-submit">
+                Get My 3 Free Classes
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
             </div>
-            <p class="form-disclaimer">Your information is secure. We'll never share your data with third parties.</p>
+            <p class="form-disclaimer">Your information is secure. We never share data with third parties.</p>
           </form>
           <div class="form-success" id="formSuccess">
-            <h3>Thank You!</h3>
-            <p>We've received your request. Our enrollment team will contact you within 24 hours to schedule your free consultation.</p>
+            <div class="form-success-icon">&#127881;</div>
+            <h3>You're All Set!</h3>
+            <p>We've received your request. Our enrollment team will contact you within 24 hours to schedule your child's 3 free trial classes.</p>
           </div>
         </div>
       </div>
@@ -1185,7 +1468,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Legacy Online School. WASC & Cognia Accredited. <a href="https://legacyonlineschool.com">legacyonlineschool.com</a></p>
+      <p>&copy; 2026 Legacy Online School &bull; WASC Accredited &bull; Saint Petersburg, FL &bull; <a href="tel:+18557254985">(855) 725-4985</a> &bull; <a href="https://legacyonlineschool.com">legacyonlineschool.com</a></p>
     </div>
   </footer>
 
@@ -1197,7 +1480,7 @@
     });
 
     // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(btn => {
+    document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
         const wasOpen = item.classList.contains('open');
@@ -1206,19 +1489,33 @@
       });
     });
 
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
 
-    // Form submission with Data Layer push (for GTM)
+    // CTA click tracking — dataLayer push
+    document.querySelectorAll('.cta-button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const ctaLocation = this.dataset.cta || this.closest('section')?.id || 'unknown';
+        const ctaText = this.textContent.trim();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'cta_click',
+          cta_location: ctaLocation,
+          cta_text: ctaText
+        });
+      });
+    });
+
+    // Form submission with dataLayer + Enhanced Conversions
     document.getElementById('applicationForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -1228,11 +1525,12 @@
       const phone = document.getElementById('phone').value;
       const grade = document.getElementById('grade').value;
 
-      // Data Layer push for GTM
+      // dataLayer push for GTM — form_success event + enhanced conversions
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'form_success',
-        form_name: 'scholarship_application',
+        form_name: 'mcsf_free_trial',
+        child_grade: grade,
         enhanced_conversions: {
           email: email,
           phone_number: phone,
