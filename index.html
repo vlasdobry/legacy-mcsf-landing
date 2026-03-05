@@ -801,22 +801,20 @@
 
     .teacher-photo {
       position: relative;
-      height: 200px;
+      height: 240px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .teacher-avatar-circle {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 900;
-      font-size: 32px;
+    .teacher-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.5s;
+    }
+
+    .teacher-card:hover .teacher-photo img {
+      transform: scale(1.05);
     }
 
     .teacher-subject {
@@ -1580,53 +1578,8 @@
         <h2>See How Your Child <span class="accent-orange">Will Learn</span></h2>
         <p>Small live classes with certified teachers, interactive tools, and students from around the world.</p>
       </div>
-      <div class="classroom-window fade-up">
-        <div class="classroom-bar">
-          <div class="classroom-dot"></div>
-          <div class="classroom-dot"></div>
-          <div class="classroom-dot"></div>
-          <span class="classroom-bar-title">Legacy Online School — Live Class</span>
-        </div>
-        <div class="classroom-body">
-          <div class="classroom-main">
-            <div class="classroom-main-icon">▶</div>
-            <h4>Live Mathematics Class</h4>
-            <p>Grade 6 • Mrs. Anderson • 10 students online</p>
-          </div>
-          <div class="classroom-sidebar">
-            <h5>Students Online (10)</h5>
-            <div class="classroom-student">
-              <div class="cls-avatar" style="background:#22c55e;">EA</div>
-              <span class="cls-name">Emma A.</span>
-              <span class="cls-flag">🇺🇸</span>
-            </div>
-            <div class="classroom-student">
-              <div class="cls-avatar" style="background:#f97316;">LT</div>
-              <span class="cls-name">Lucas T.</span>
-              <span class="cls-flag">🇧🇷</span>
-            </div>
-            <div class="classroom-student">
-              <div class="cls-avatar" style="background:#8b5cf6;">SK</div>
-              <span class="cls-name">Sofia K.</span>
-              <span class="cls-flag">🇪🇸</span>
-            </div>
-            <div class="classroom-student">
-              <div class="cls-avatar" style="background:#2563eb;">AM</div>
-              <span class="cls-name">Aiden M.</span>
-              <span class="cls-flag">🇬🇧</span>
-            </div>
-            <div class="classroom-student">
-              <div class="cls-avatar" style="background:#ef4444;">YN</div>
-              <span class="cls-name">Yuki N.</span>
-              <span class="cls-flag">🇯🇵</span>
-            </div>
-            <div class="classroom-student">
-              <div class="cls-avatar" style="background:#0891b2;">MR</div>
-              <span class="cls-name">Maya R.</span>
-              <span class="cls-flag">🇺🇸</span>
-            </div>
-          </div>
-        </div>
+      <div class="classroom-window fade-up" style="border:none;box-shadow:0 25px 60px rgba(0,0,0,0.15);">
+        <img src="classroom.jpg" alt="Live online class at Legacy Online School — teacher and students on video call" style="width:100%;display:block;border-radius:24px;" loading="lazy">
       </div>
     </div>
   </section>
@@ -1640,8 +1593,8 @@
       </div>
       <div class="teachers-grid fade-up">
         <div class="teacher-card">
-          <div class="teacher-photo" style="background: linear-gradient(135deg, var(--green-light), var(--blue-50));">
-            <div class="teacher-avatar-circle" style="background: linear-gradient(135deg, #22c55e, #16a34a);">SA</div>
+          <div class="teacher-photo">
+            <img src="teacher-sarah.jpg" alt="Sarah Anderson — Mathematics Teacher" loading="lazy">
             <div class="teacher-subject">Mathematics</div>
           </div>
           <div class="teacher-info">
@@ -1650,8 +1603,8 @@
           </div>
         </div>
         <div class="teacher-card">
-          <div class="teacher-photo" style="background: linear-gradient(135deg, var(--blue-50), #ede9fe);">
-            <div class="teacher-avatar-circle" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">JC</div>
+          <div class="teacher-photo">
+            <img src="teacher-james.jpg" alt="James Carter — Science Teacher" loading="lazy">
             <div class="teacher-subject">Science</div>
           </div>
           <div class="teacher-info">
@@ -1660,8 +1613,8 @@
           </div>
         </div>
         <div class="teacher-card">
-          <div class="teacher-photo" style="background: linear-gradient(135deg, var(--orange-light), #fef9c3);">
-            <div class="teacher-avatar-circle" style="background: linear-gradient(135deg, #f97316, #ea580c);">MR</div>
+          <div class="teacher-photo">
+            <img src="teacher-maria.jpg" alt="Maria Rodriguez — English & Literature Teacher" loading="lazy">
             <div class="teacher-subject">English & Literature</div>
           </div>
           <div class="teacher-info">
@@ -1670,8 +1623,8 @@
           </div>
         </div>
         <div class="teacher-card">
-          <div class="teacher-photo" style="background: linear-gradient(135deg, #ede9fe, var(--blue-50));">
-            <div class="teacher-avatar-circle" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">DK</div>
+          <div class="teacher-photo">
+            <img src="teacher-david.jpg" alt="David Kim — History Teacher" loading="lazy">
             <div class="teacher-subject">History</div>
           </div>
           <div class="teacher-info">
