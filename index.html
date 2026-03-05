@@ -771,6 +771,58 @@
 
     .cls-flag { font-size: 14px; }
 
+    /* ===== CLASSROOM LAYOUT ===== */
+    .classroom-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .classroom-layout { grid-template-columns: 1.2fr 0.8fr; }
+    }
+
+    .classroom-features-col {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .classroom-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .classroom-feature-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .classroom-feature-icon.blue { background: var(--blue-100); }
+    .classroom-feature-icon.orange { background: var(--orange-100); }
+    .classroom-feature-icon.green { background: var(--green-light); }
+    .classroom-feature-icon.yellow { background: #fef9c3; }
+
+    .classroom-feature h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 4px;
+    }
+
+    .classroom-feature p {
+      font-size: 14px;
+      color: var(--slate-500);
+      line-height: 1.6;
+    }
+
     /* ===== TEACHERS ===== */
     .teachers {
       padding: 80px 0;
@@ -1578,8 +1630,42 @@
         <h2>See How Your Child <span class="accent-orange">Will Learn</span></h2>
         <p>Small live classes with certified teachers, interactive tools, and students from around the world.</p>
       </div>
-      <div class="classroom-window fade-up" style="border:none;box-shadow:0 25px 60px rgba(0,0,0,0.15);">
-        <img src="classroom.jpg" alt="Live online class at Legacy Online School — teacher and students on video call" style="width:100%;display:block;border-radius:24px;" loading="lazy">
+      <div class="classroom-layout fade-up">
+        <div class="classroom-image-col">
+          <div class="classroom-window" style="border:none;box-shadow:0 25px 60px rgba(0,0,0,0.15);">
+            <img src="classroom.jpg" alt="Live online class at Legacy Online School — teacher and students on video call" style="width:100%;display:block;border-radius:24px;" loading="lazy">
+          </div>
+        </div>
+        <div class="classroom-features-col">
+          <div class="classroom-feature">
+            <div class="classroom-feature-icon blue">📹</div>
+            <div>
+              <h4>Live Video Classes</h4>
+              <p>Real-time interaction with certified teachers — not pre-recorded lectures. Your child can ask questions and participate actively.</p>
+            </div>
+          </div>
+          <div class="classroom-feature">
+            <div class="classroom-feature-icon orange">👥</div>
+            <div>
+              <h4>~10 Students Per Class</h4>
+              <p>Small groups ensure every child gets individual attention and personalized feedback from their teacher.</p>
+            </div>
+          </div>
+          <div class="classroom-feature">
+            <div class="classroom-feature-icon green">🌍</div>
+            <div>
+              <h4>Global Classmates</h4>
+              <p>Students from 15+ countries learn together in a safe, supportive, and bully-free environment.</p>
+            </div>
+          </div>
+          <div class="classroom-feature">
+            <div class="classroom-feature-icon yellow">🎯</div>
+            <div>
+              <h4>Interactive Tools</h4>
+              <p>Digital whiteboard, quizzes, breakout rooms, and collaborative exercises keep students engaged throughout each lesson.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
