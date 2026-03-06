@@ -1994,6 +1994,17 @@
       });
     });
 
+    // Phone click tracking
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener('click', function() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'phone_click',
+          phone_number: this.href.replace('tel:', '')
+        });
+      });
+    });
+
     // Form submission with dataLayer + Enhanced Conversions
     document.getElementById('applicationForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -2009,7 +2020,8 @@
         enhanced_conversions: {
           email: email,
           phone_number: phone,
-          first_name: firstName
+          first_name: firstName,
+          address: { state: 'Maine' }
         }
       });
 
